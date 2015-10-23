@@ -16,7 +16,7 @@ public class GenerateStars : MonoBehaviour {
 	public float star_size_variation = 0;
 	public float space_width, space_height, space_depth;
 	void Start () {
-		
+		CreateStars();
 	}
 
 
