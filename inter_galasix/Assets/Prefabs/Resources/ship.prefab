@@ -26,10 +26,10 @@ GameObject:
   - 4: {fileID: 461950}
   - 212: {fileID: 21290378}
   - 114: {fileID: 11494314}
-  - 61: {fileID: 6130140}
   - 50: {fileID: 5078036}
   - 114: {fileID: 11497796}
   - 114: {fileID: 11441114}
+  - 60: {fileID: 6099404}
   m_Layer: 0
   m_Name: ship
   m_TagString: Untagged
@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .421999991, y: .254999995, z: 0}
+  m_LocalPosition: {x: -4.13199997, y: -1.13199997, z: 0}
   m_LocalScale: {x: .379238367, y: .379238397, z: .379238397}
   m_Children:
   - {fileID: 486806}
@@ -78,8 +78,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6130140
-BoxCollider2D:
+--- !u!60 &6099404
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -89,8 +89,14 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1.77799988}
+  m_Points:
+    m_Paths:
+    - - {x: -.00200000009, y: 1}
+      - {x: -1, y: -.994000018}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
+      - {x: 1, y: -.995999992}
+      - {x: .00200000009, y: 1}
 --- !u!96 &9679274
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -147,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403a88ce3bc7375418321a279345cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMain: {fileID: 0}
 --- !u!114 &11494314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +171,7 @@ MonoBehaviour:
   direction: {fileID: 0}
   _doubleTapTimeLeft: 0
   _doubleTapTimeRight: 0
+  zoomout_FOV: 50
 --- !u!114 &11497796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,6 +241,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: zoomout_FOV
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
