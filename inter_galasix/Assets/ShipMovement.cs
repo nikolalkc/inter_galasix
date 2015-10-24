@@ -10,6 +10,8 @@ public class ShipMovement : MonoBehaviour {
 	public float _doubleTapTimeRight;
 	public float zoomout_FOV;
 	float original_FOV;
+	public GameObject bullet;
+	public Transform bulletSpawnPoint;
 	//zoomout preko pomeranja kamere po z osi
 		//Vector3 original_camera_position = new Vector3();
 		//Vector3 zoomout_position = new Vector3();
@@ -40,9 +42,10 @@ public class ShipMovement : MonoBehaviour {
 			rig.AddTorque(Input.GetAxis("Horizontal") * torqueFactor * -1 * Time.deltaTime);
 		}
 
-		//nitro
+		//pucanje
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			rig.AddForce(transform.up * forceBoost);
+			PhotonNetwork.Instantiate("bullet", bulletSpawnPoint.position, transform.rotation,0);
+			
 		}
 
 
@@ -89,7 +92,8 @@ public class ShipMovement : MonoBehaviour {
 
 
 
-
+		//nitro
+		//rig.AddForce(transform.up * forceBoost);
 
 
 

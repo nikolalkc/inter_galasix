@@ -37,6 +37,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &192418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 402346}
+  m_Layer: 0
+  m_Name: bulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402346
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.44599998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 461950}
+  m_RootOrder: 1
 --- !u!4 &461950
 Transform:
   m_ObjectHideFlags: 1
@@ -44,10 +71,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13199997, y: -1.13199997, z: 0}
+  m_LocalPosition: {x: -1.81465912, y: .545840383, z: 0}
   m_LocalScale: {x: .379238367, y: .379238397, z: .379238397}
   m_Children:
   - {fileID: 486806}
+  - {fileID: 402346}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &486806
@@ -172,6 +200,8 @@ MonoBehaviour:
   _doubleTapTimeLeft: 0
   _doubleTapTimeRight: 0
   zoomout_FOV: 50
+  bullet: {fileID: 119132, guid: 65995c98e75d8be4c81eee22604f16f0, type: 2}
+  bulletSpawnPoint: {fileID: 402346}
 --- !u!114 &11497796
 MonoBehaviour:
   m_ObjectHideFlags: 1
