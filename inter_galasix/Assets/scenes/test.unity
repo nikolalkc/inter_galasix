@@ -153,8 +153,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313673839}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -38.2999992, y: 0, z: 0}
-  m_LocalScale: {x: 9.06208134, y: 3.1650784, z: 4.47776985}
+  m_LocalPosition: {x: -38.2999992, y: 0, z: 88.4000015}
+  m_LocalScale: {x: 14.0469713, y: 4.90613031, z: 6.94090939}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -203,7 +203,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11499132, guid: d5ddf632d6f526e4f9c34d16761ad1e1, type: 2}
       propertyPath: default_star_size
-      value: .0399999991
+      value: .00999999978
       objectReference: {fileID: 0}
     - target: {fileID: 11499132, guid: d5ddf632d6f526e4f9c34d16761ad1e1, type: 2}
       propertyPath: number_of_stars
@@ -412,7 +412,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383226801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.0999985, y: -6.08901405, z: 60.7663879}
+  m_LocalPosition: {x: -61.0999985, y: -6.08901405, z: 24.2999992}
   m_LocalScale: {x: 16.6063347, y: 16.6063404, z: 16.6063404}
   m_Children: []
   m_Father: {fileID: 0}

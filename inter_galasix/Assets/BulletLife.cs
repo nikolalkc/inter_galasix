@@ -6,12 +6,12 @@ public class BulletLife : MonoBehaviour {
 
 
 	void Start () {
-
+		Invoke("DestroySelf", 1f);
 		GetComponent<Rigidbody2D>().AddForce(transform.up * 300);
 	}
 	
 
 	void DestroySelf() {
-		Destroy(gameObject);
+		PhotonNetwork.Destroy(gameObject);
 	}
 }
