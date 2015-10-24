@@ -6,12 +6,15 @@ public class ShipMovement : MonoBehaviour {
 	Rigidbody2D rig;
 	public float forceFactor, torqueFactor, forceBoost;
 	public Transform direction;
-	public float _doubleTapTimeLeft;
+	public float _doubleTapTimeUp;
 	public float _doubleTapTimeRight;
 	public float zoomout_FOV;
 	float original_FOV;
 	public GameObject bullet;
 	public Transform bulletSpawnPoint;
+	Camera pov;
+	Camera main;
+	bool fps = false;
 	//zoomout preko pomeranja kamere po z osi
 		//Vector3 original_camera_position = new Vector3();
 		//Vector3 zoomout_position = new Vector3();
@@ -19,9 +22,10 @@ public class ShipMovement : MonoBehaviour {
 		//bool new_zoomout_position_set = false;
 
 	void Start () {
+		main = Camera.main;
 		original_FOV = Camera.main.fieldOfView;
 		rig = GetComponent<Rigidbody2D>();
-
+		pov = GetComponentInChildren<Camera>();
 		//zoomout preko pomeranja kamere po z osi
 			//original_camera_position = Camera.main.transform.position;
 			//zoomout_position = original_camera_position + new Vector3(0, 0, -30);
@@ -43,51 +47,66 @@ public class ShipMovement : MonoBehaviour {
 		}
 
 		//pucanje
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetButton("Fire")) {
+
 			PhotonNetwork.Instantiate("bullet", bulletSpawnPoint.position, transform.rotation,0);
 			
 		}
 
-
-		//tap Left
-		bool doubleTapLeft = false;
-
-		#region doubleTapLeft
-
-		if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-			if (Time.time < _doubleTapTimeLeft + .3f) {
-				doubleTapLeft = true;
-			}
-			_doubleTapTimeLeft = Time.time;
+		//ukljuci pov
+		if (Input.GetKeyDown(KeyCode.C)) {
+			pov.enabled=true;
+			main.enabled = false;
+			fps = true;
 		}
-
-		#endregion
-
-		if (doubleTapLeft) {
-			//Debug.Log("DoubleTapLeft");
-			rig.AddForce(transform.right * -forceBoost);
+		//iskljuci pov
+		if (Input.GetKeyUp(KeyCode.C)) {
+			pov.enabled = false;
+			main.enabled=true;
+			fps = false;
 		}
 
 
 
-		//tap Right
-		bool doubleTapRight = false;
+		////tap Left
+		//bool doubleTapLeft = false;
 
-		#region doubleTapRight
+		//#region doubleTapLeft
 
-		if (Input.GetKeyDown(KeyCode.RightArrow)) {
-			if (Time.time < _doubleTapTimeRight + .3f) {
-				doubleTapRight = true;
-			}
-			_doubleTapTimeRight = Time.time;
-		}
+		//if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+		//	if (Time.time < _doubleTapTimeLeft + .3f) {
+		//		doubleTapLeft = true;
+		//	}
+		//	_doubleTapTimeLeft = Time.time;
+		//}
 
-		#endregion
+		//#endregion
 
-		if (doubleTapRight) {
-			//Debug.Log("DoubleTapRight");
-			rig.AddForce(transform.right * forceBoost);
-		}
+		//if (doubleTapLeft) {
+		//	//Debug.Log("DoubleTapLeft");
+		//	rig.AddForce(transform.right * -forceBoost);
+		//}
+
+
+
+		////tap Right
+		//bool doubleTapRight = false;
+
+		//#region doubleTapRight
+
+		//if (Input.GetKeyDown(KeyCode.RightArrow)) {
+		//	if (Time.time < _doubleTapTimeRight + .3f) {
+		//		doubleTapRight = true;
+		//	}
+		//	_doubleTapTimeRight = Time.time;
+		//}
+
+		//#endregion
+
+		//if (doubleTapRight) {
+		//	//Debug.Log("DoubleTapRight");
+		//	rig.AddForce(transform.right * forceBoost);
+		//}
 
 
 
@@ -95,6 +114,22 @@ public class ShipMovement : MonoBehaviour {
 		//nitro
 		//rig.AddForce(transform.up * forceBoost);
 
+		bool doubleTapUp = false;
+
+		#region doubleTapRight
+
+		if (Input.GetButton("Boost")) {
+			if (Time.time < _doubleTapTimeUp + .3f) {
+				doubleTapUp = true;
+			}
+			_doubleTapTimeUp = Time.time;
+		}
+
+		#endregion
+
+		if (doubleTapUp) {
+			rig.AddForce(transform.up * forceBoost);
+		}
 
 
 		
@@ -118,13 +153,16 @@ public class ShipMovement : MonoBehaviour {
 
 
 		//zoomout preko FOV 
-		Camera camera = Camera.main;
-		if (Input.GetKey(KeyCode.LeftShift)) {
-			camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, zoomout_FOV, 5 * Time.deltaTime);
+		if (!fps) {
+			Camera camera = Camera.main;
+			if (Input.GetButton("Zoomout")) {
+				camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, zoomout_FOV, 5 * Time.deltaTime);
+			}
+			else {
+				camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, original_FOV, 5 * Time.deltaTime);
+			}
 		}
-		else {
-			camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, original_FOV, 5 * Time.deltaTime);
-		}
+
 
 
 

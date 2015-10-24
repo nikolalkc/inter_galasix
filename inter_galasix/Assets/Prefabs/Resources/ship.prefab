@@ -16,6 +16,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &125422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 440618}
+  - 20: {fileID: 2066904}
+  - 124: {fileID: 12419178}
+  - 92: {fileID: 9209092}
+  - 81: {fileID: 8167878}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &168614
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +51,7 @@ GameObject:
   - 60: {fileID: 6099404}
   m_Layer: 0
   m_Name: ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +82,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 461950}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!4 &440618
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125422}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: .920000017, z: 0}
+  m_LocalScale: {x: 2.63686395, y: 2.63686371, z: 2.63686371}
+  m_Children: []
+  m_Father: {fileID: 461950}
+  m_RootOrder: 0
 --- !u!4 &461950
 Transform:
   m_ObjectHideFlags: 1
@@ -71,9 +102,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.81465912, y: .545840383, z: 0}
+  m_LocalPosition: {x: -83.9223099, y: -6.26501226, z: 4.79318523}
   m_LocalScale: {x: .379238367, y: .379238397, z: .379238397}
   m_Children:
+  - {fileID: 440618}
   - {fileID: 486806}
   - {fileID: 402346}
   m_Father: {fileID: 0}
@@ -89,7 +121,41 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 461950}
-  m_RootOrder: 0
+  m_RootOrder: 1
+--- !u!20 &2066904
+Camera:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125422}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!50 &5078036
 Rigidbody2D:
   serializedVersion: 2
@@ -125,6 +191,20 @@ PolygonCollider2D:
       - {x: 1, y: -1}
       - {x: 1, y: -.995999992}
       - {x: .00200000009, y: 1}
+--- !u!81 &8167878
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125422}
+  m_Enabled: 0
+--- !u!92 &9209092
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125422}
+  m_Enabled: 1
 --- !u!96 &9679274
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -193,11 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcc06885a6de0346b4d807c47e9e3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceFactor: 200
+  forceFactor: 250
   torqueFactor: 60
   forceBoost: 200
   direction: {fileID: 0}
-  _doubleTapTimeLeft: 0
+  _doubleTapTimeUp: 0
   _doubleTapTimeRight: 0
   zoomout_FOV: 50
   bullet: {fileID: 119132, guid: 65995c98e75d8be4c81eee22604f16f0, type: 2}
@@ -227,6 +307,13 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+--- !u!124 &12419178
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125422}
+  m_Enabled: 1
 --- !u!212 &21290378
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -283,6 +370,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_AngularDrag
       value: 10.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceFactor
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_BackGroundColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
