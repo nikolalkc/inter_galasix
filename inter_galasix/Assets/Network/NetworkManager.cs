@@ -30,7 +30,7 @@ public class NetworkManager : MonoBehaviour {
 
 		if (!worldCreated) {
 			RandomlyInstantiateNetworkObjects("crate", space_width, space_height, 0, numberOfCrates);
-			RandomlyInstantiateNetworkObjects("meteor1", space_width, space_height, 10, 20);
+			//RandomlyInstantiateNetworkObjects("meteor1", space_width, space_height, 10, 20);
 			worldCreated = true;
 		}
 
