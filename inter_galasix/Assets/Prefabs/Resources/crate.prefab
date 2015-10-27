@@ -12,7 +12,8 @@ GameObject:
   - 60: {fileID: 6088692}
   - 114: {fileID: 11495782}
   - 114: {fileID: 11443086}
-  m_Layer: 0
+  - 61: {fileID: 6192238}
+  m_Layer: 8
   m_Name: crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ GameObject:
   - 33: {fileID: 3390902}
   - 23: {fileID: 2319256}
   - 114: {fileID: 11466938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +127,19 @@ PolygonCollider2D:
       - {x: .83565861, y: -.193325773}
       - {x: .0758824125, y: -.880975962}
       - {x: -.855105281, y: .18907918}
+--- !u!61 &6192238
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111250}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!114 &11443086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd39b5fec76c0b44a4eceeede89bfb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnetic_distance: 7
+  magnet_speed: 2
 --- !u!114 &11466938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateFactor: 15
+  direction: {x: 0, y: 1, z: 0}
 --- !u!114 &11495782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +209,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: magnetic_distance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: magnet_speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
