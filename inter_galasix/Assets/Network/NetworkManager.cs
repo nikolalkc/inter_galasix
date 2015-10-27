@@ -7,6 +7,7 @@ public class NetworkManager : MonoBehaviour {
 	public string roomName = "Galaxy";
 	public Transform spawnPoint;
 	public string playerPrefabName = "ship";
+	public GameObject gameTitle;
 
 	public int numberOfCrates;
 	public float space_width, space_height;
@@ -21,6 +22,7 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	void OnJoinedRoom() {
+		gameTitle.SetActive(false);
 		PhotonNetwork.Instantiate(playerPrefabName,
 								  spawnPoint.position,
 								  spawnPoint.rotation,
