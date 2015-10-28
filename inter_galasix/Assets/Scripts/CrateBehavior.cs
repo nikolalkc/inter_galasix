@@ -2,9 +2,12 @@
 using System.Collections;
 
 public class CrateBehavior : MonoBehaviour {
+	public static int pickedCrates;
 	public float magnetic_distance, magnet_speed;
 	GameObject closer_player = null;
 	bool magnetActive = false;
+	public bool cratePicked = false;
+	bool crateCollected = false;
 	Vector3 position;
 	Quaternion rotation;
 
@@ -35,12 +38,17 @@ public class CrateBehavior : MonoBehaviour {
 
 
 
-		if (distance < magnetic_distance || magnetActive) {
+		if ((distance < magnetic_distance || magnetActive) && !crateCollected) {
 			if (magnetActive == false) {
 				magnetActive = true;	
+				pickedCrates +=1;
+				cratePicked = true;
+				//print("Picked Crates: " + pickedCrates);
 			}
 			transform.position = Vector3.Lerp(transform.position, closer_player.transform.position, magnet_speed * Time.deltaTime);
 		}
+
+
 	}
 
 
@@ -54,4 +62,11 @@ public class CrateBehavior : MonoBehaviour {
 			rotation = (Quaternion)stream.ReceiveNext();
 		}
 	}
+
+	public void OnCrateCollected(Transform collector){
+		crateCollected = true;
+		transform.position = Vector3.Lerp(transform.position, collector.position, magnet_speed * 2 * Time.deltaTime);
+	}
+
+
 }
