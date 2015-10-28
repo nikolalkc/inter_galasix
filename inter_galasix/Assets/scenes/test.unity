@@ -308,21 +308,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 491814, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.48187757
-      objectReference: {fileID: 0}
-    - target: {fileID: 491814, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.48187828
-      objectReference: {fileID: 0}
-    - target: {fileID: 491814, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.48187828
-      objectReference: {fileID: 0}
-    - target: {fileID: 11433806, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
-      propertyPath: rotateFactor
-      value: 200
+    - target: {fileID: 5855048, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
@@ -593,6 +581,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5ddf632d6f526e4f9c34d16761ad1e1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &806107331 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 116942, guid: 77c17a81d74ca46498048db74135fa47, type: 2}
+  m_PrefabInternal: {fileID: 307711487}
+--- !u!114 &806107333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806107331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962f5521a28c8cf42af1c3880908ca45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1081635101
 Prefab:
   m_ObjectHideFlags: 0
@@ -791,7 +794,7 @@ GameObject:
   - 23: {fileID: 1383226802}
   - 114: {fileID: 1383226806}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

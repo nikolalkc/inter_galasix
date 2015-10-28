@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491814}
+  - 58: {fileID: 5855048}
   m_Layer: 0
   m_Name: logo_circles
   m_TagString: Untagged
@@ -174,8 +175,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .69129169, y: .691291869, z: .691291869}
+  m_LocalPosition: {x: -76.4100037, y: -6.19999981, z: 0}
+  m_LocalScale: {x: 1.48187757, y: 1.48187828, z: 1.48187828}
   m_Children:
   - {fileID: 455090}
   m_Father: {fileID: 0}
@@ -208,6 +209,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 493668}
   m_RootOrder: 0
+--- !u!58 &5855048
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116942}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .639999986
 --- !u!96 &9607720
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -444,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90844356aff420249b9aa83a8d83d333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateFactor: 100
+  rotateFactor: 200
   direction: {x: 0, y: 0, z: 1}
 --- !u!114 &11468536
 MonoBehaviour:
