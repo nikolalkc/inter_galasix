@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fab9b83e46eb7b4ab5bca0bd65b22a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 2
+  speedFactor: 5
 --- !u!212 &21268356
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -93,7 +93,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: speedFactor
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
