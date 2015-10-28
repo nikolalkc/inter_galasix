@@ -47,8 +47,7 @@ public class ShipMovement : MonoBehaviour {
 		}
 
 		//pucanje
-		if (Input.GetButton("Fire")) {
-
+		if (Input.GetButtonDown("Fire")) {
 			PhotonNetwork.Instantiate("bullet", bulletSpawnPoint.position, transform.rotation,0);
 			
 		}

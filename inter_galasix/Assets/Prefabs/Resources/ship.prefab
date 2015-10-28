@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceFactor: 250
   torqueFactor: 60
-  forceBoost: 200
+  forceBoost: 30
   direction: {fileID: 0}
   _doubleTapTimeUp: 0
   _doubleTapTimeRight: 0
@@ -394,6 +394,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_BackGroundColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceBoost
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
