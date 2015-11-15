@@ -10,6 +10,7 @@ public class CrateBehavior : MonoBehaviour {
 	bool crateCollected = false;
 	Vector3 position;
 	Quaternion rotation;
+	Transform globalCollector;
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player") {
@@ -48,7 +49,10 @@ public class CrateBehavior : MonoBehaviour {
 			transform.position = Vector3.Lerp(transform.position, closer_player.transform.position, magnet_speed * Time.deltaTime);
 		}
 
-
+		if (crateCollected) {
+			if (transform.position != globalCollector.position)
+			transform.position = Vector3.Lerp(transform.position, globalCollector.position, magnet_speed * 2 * Time.deltaTime);
+		}
 	}
 
 
@@ -65,8 +69,11 @@ public class CrateBehavior : MonoBehaviour {
 
 	public void OnCrateCollected(Transform collector){
 		crateCollected = true;
-		transform.position = Vector3.Lerp(transform.position, collector.position, magnet_speed * 2 * Time.deltaTime);
+		globalCollector = collector;
+		
 	}
+
+
 
 
 }
