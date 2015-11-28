@@ -32,9 +32,13 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 
 	IEnumerator Alive() {
 		while (isAlive) {
+			//smooth
 			transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * lerpSmoothing);
 			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * lerpSmoothing);
 
+			//secka
+			transform.position = position;
+			transform.rotation = rotation;
 			yield return null;
 		}
 	}
